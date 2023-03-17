@@ -2,7 +2,7 @@
 // É uma classe que vai ser utilizada para criar objetos que representam uma linha na tabela 
 // do banco de dados.
 const { DataTypes } = require('sequelize');
-const database = require('./db');
+const database = require('../db');
 const Manufacturer = require('./manufacturer');
 
 const Product = database.define('Product', {

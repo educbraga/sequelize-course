@@ -1,16 +1,23 @@
 async function teste() {
 
 	const database = require('./db');
-	const Product = require ('./product');
+	const Product = require ('./models/product');
+	const Manufacturer = require ('./models/manufacturer');
 
 	await database.sync();
 
-	// const product = await Product.create({
-	// 	name: 'Macbook Pro',
-	// 	price: 2000,
-	// 	description: 'A Pro laptop',
-	// });
-	// console.log(product);
+	const manufacturer = await Manufacturer.create({
+		name: 'Apple',
+	});
+	console.log(manufacturer);
+
+	const product = await Product.create({
+		name: 'Macbook Pro',
+		price: 2000,
+		description: 'A Pro laptop',
+		manufacturerId: manufacturer.id, 
+	});
+	console.log(product);
 
 	// const products = await Product.findAll();
 	// console.log(products);
