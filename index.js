@@ -3,6 +3,7 @@ async function teste() {
 	const database = require('./db');
 	const Product = require ('./models/product');
 	const Manufacturer = require ('./models/manufacturer');
+	const Category = require ('./models/category');
 
 	await database.sync();
 
