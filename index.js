@@ -1,4 +1,4 @@
-(async () => {
+async function teste() {
 
 	const database = require('./db');
 	const Product = require ('./product');
@@ -37,8 +37,10 @@
 	
 	// await Product.destroy({
 	// 	where: {
-	// 		id: 3
+	// 		id: 4
 	// 	}
 	// })
-})();
+}
+
+teste();
 
