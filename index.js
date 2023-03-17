@@ -1,34 +1,41 @@
 (async () => {
 
-const database = require('./db');
-const Product = require ('./product');
+	const database = require('./db');
+	const Product = require ('./product');
 
-await database.sync();
+	await database.sync();
 
-const product = await Product.create({
-	name: 'Macbook Air',
-	price: 1000,
-	description: 'A laptop',
-});
-console.log(product);
+	// const product = await Product.create({
+	// 	name: 'Macbook Air',
+	// 	price: 1000,
+	// 	description: 'A laptop',
+	// });
+	// console.log(product);
 
-const products = await Product.findAll();
-console.log(products);
+	// const products = await Product.findAll();
+	// console.log(products);
 
-const productSearch = await Product.findByPk(1);
-console.log(productSearch);
+	// const product = await Produxt.findAll({
+	// 	where: {
+	// 		id: 1
+	// 	}
+	// })
+	// console.log(product)
 
-const productUpdate = await Product.findByPk(1);
-productUpdate.name = 'Macbook Pro';
-await productUpdate.save();
+	// const productSearch = await Product.findByPk(1);
+	// console.log(productSearch);
 
-const productDelete = await Product.findByPk(1);
-await productDelete.destroy();
+	// const productUpdate = await Product.findByPk(1);
+	// productUpdate.name = 'Macbook Pro';
+	// await productUpdate.save();
 
-await product.destroy({
-	where: {
-		id: 1
-	}
-})
+	// const productDelete = await Product.findByPk(1);
+	// await productDelete.destroy();
+
+	// await product.destroy({
+	// 	where: {
+	// 		id: 1
+	// 	}
+	// })
 });
 
