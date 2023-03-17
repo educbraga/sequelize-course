@@ -60,14 +60,17 @@ async function teste() {
 	// console.log(products);
 
 	// Eager Loading / Carregamento antecipado de relacionamentos
-	const manufacturer = await Manufacturer.findByPk(1, { include: Product });
-	console.log(manufacturer.Products);
+	// const manufacturer = await Manufacturer.findByPk(1, { include: Product });
+	// console.log(manufacturer.Products);
 
 // UPDATE
 
-	// const productUpdate = await Product.findByPk(2);
-	// productUpdate.name = 'Macbook Pro M1';
-	// await productUpdate.save();
+	// const product = await Product.findByPk(2);
+	// product.name = 'Macbook Pro M1';
+	// await product.save();
+
+	const product = await Product.findByPk(1);
+	await product.setCategory([category]);
 
 // DELETE
 

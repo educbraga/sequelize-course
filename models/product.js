@@ -5,6 +5,7 @@ const { DataTypes } = require('sequelize');
 const database = require('../db');
 const Manufacturer = require('./manufacturer');
 const Category = require('./category');
+const CategoryProduct = require('./categoryProduct');
 
 const Product = database.define('Product', {
   // Model attributes are defined here
