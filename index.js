@@ -4,7 +4,7 @@ async function teste() {
 	const Product = require ('./models/product');
 	const Manufacturer = require ('./models/manufacturer');
 
-	await database.sync();
+	await database.sync({ force: true });
 
 	const manufacturer = await Manufacturer.create({
 		name: 'Apple',
