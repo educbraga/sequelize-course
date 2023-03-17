@@ -28,7 +28,7 @@ await productDelete.destroy();
 await product.destroy({
 	where: {
 		id: 1
-	})
+	}
 })
-})
+});
 
