@@ -25,16 +25,19 @@
 	// const productSearch = await Product.findByPk(1);
 	// console.log(productSearch);
 
-	const productUpdate = await Product.findByPk(1);
-	productUpdate.name = 'Macbook Air M1';
-	await productUpdate.save();
+	// const productUpdate = await Product.findByPk(2);
+	// productUpdate.name = 'Macbook Pro M1';
+	// await productUpdate.save();
 
-	// const productDelete = await Product.findByPk(1);
+	// const productDelete = await Product.findByPk(2);
 	// await productDelete.destroy();
 
-	// await product.destroy({
+	// const product = await Product.findByPk(1);
+	// await product.destroy()
+	
+	// await Product.destroy({
 	// 	where: {
-	// 		id: 1
+	// 		id: 3
 	// 	}
 	// })
 })();
