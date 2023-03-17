@@ -4,20 +4,27 @@ async function teste() {
 	const Product = require ('./models/product');
 	const Manufacturer = require ('./models/manufacturer');
 
-	await database.sync({ force: true });
+	await database.sync();
 
-	const manufacturer = await Manufacturer.create({
-		name: 'Apple',
-	});
-	console.log(manufacturer);
+	// Cuidado! O force recria o banco de dados e apaga todos os dados.
+	// await database.sync({ force: true });
 
-	const product = await Product.create({
-		name: 'Macbook Pro',
-		price: 2000,
-		description: 'A Pro laptop',
-		manufacturerId: manufacturer.id, 
-	});
-	console.log(product);
+// CREATE
+
+	// const manufacturer = await Manufacturer.create({
+	// 	name: 'Apple',
+	// });
+	// console.log(manufacturer);
+
+	// const product = await Product.create({
+	// 	name: 'Macbook Pro',
+	// 	price: 2000,
+	// 	description: 'A Pro laptop',
+	// 	manufacturerId: manufacturer.id, 
+	// });
+	// console.log(product);
+
+// READ
 
 	// const products = await Product.findAll();
 	// console.log(products);
@@ -32,9 +39,22 @@ async function teste() {
 	// const productSearch = await Product.findByPk(1);
 	// console.log(productSearch);
 
+	// Lazy Loading / Carregamento tardio de relacionamentos
+	// const productSearch = await Product.findByPk(1);
+	// const manufacturer = await productSearch.getManufacturer();
+	// console.log(manufacturer.name);
+
+	// Eager Loading / Carregamento antecipado de relacionamentos
+	// const productSearch = await Product.findByPk(1, { include: Manufacturer });
+	// console.log(productSearch.Manufacturer.name);
+
+// UPDATE
+
 	// const productUpdate = await Product.findByPk(2);
 	// productUpdate.name = 'Macbook Pro M1';
 	// await productUpdate.save();
+
+// DELETE
 
 	// const productDelete = await Product.findByPk(2);
 	// await productDelete.destroy();
@@ -50,4 +70,3 @@ async function teste() {
 }
 
 teste();
-
