@@ -1,3 +1,6 @@
+// Isto aqui é o equivalente à um modelo/model.
+// É uma classe que vai ser utilizada para criar objetos que representam uma linha na tabela 
+// do banco de dados.
 const { DataTypes } = require('sequelize');
 const database = require('./db');
 
