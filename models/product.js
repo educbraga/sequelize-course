@@ -29,6 +29,10 @@ Manufacturer.hasMany(Product, {
   foreignKey: 'manufacturerId'
 });
 
+Product.belongsToMany(Category, { through: CategoryProduct, foreignKey: 'productId', constraint: true });
+
+Category.belongsToMany(Product, { through: CategoryProduct, foreignKey: 'categoryId', constraint: true });
+
 module.exports = Product;
 
 // Tipos de relacionamentos no sequelize:
