@@ -21,3 +21,8 @@ const Product = database.define('User', {
 });
 
 module.exports = Product;
+
+// Tipos de relacionamentos no sequelize:
+// 1-1
+// 1-N
+// N:M
