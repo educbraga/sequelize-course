@@ -25,6 +25,11 @@ async function teste() {
 	// });
 	// console.log(product);
 
+	const category = await Category.create({
+		name: 'Informática',
+	});
+	console.log(category);
+
 // READ
 
 	// const products = await Product.findAll();
