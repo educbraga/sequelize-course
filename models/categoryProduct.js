@@ -1,18 +1,13 @@
-const { DataTypes } = require('sequelize');
+const Sequelize = require('sequelize');
 const database = require('../db');
 
-const CategoryProduct = database.define('CategoryProduct', {
-  // Model attributes are defined here
-  id: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    allowNull: false,
-    primaryKey: true,
-  },
-  name: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-});
+const CategoryProduct = database.define('categoryProduct', {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        allowNull: false,
+        primaryKey: true
+    }
+})
 
 module.exports = CategoryProduct;
