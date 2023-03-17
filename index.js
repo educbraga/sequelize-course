@@ -1,4 +1,3 @@
-//index.js
 (async () => {
     const database = require('./db');
     const Product = require('./models/product');
