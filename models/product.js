@@ -21,7 +21,13 @@ const Product = database.define('Product', {
   description: DataTypes.STRING,
 });
 
+//Se eu não tivesse definido o nome da foreignKey o sequelize teria definido ela para mim.
 Product.belongsTo(Manufacturer, { constraints: true, foreignKey: 'manufacturerId' })
+
+Manufacturer.hasMany(Product, {
+  //Se eu não tivesse definido o nome da foreignKey, não seria necessário passar este parâmetro.
+  foreignKey: 'manufacturerId'
+});
 
 module.exports = Product;
 

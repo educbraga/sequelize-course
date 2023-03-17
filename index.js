@@ -48,6 +48,15 @@ async function teste() {
 	// const productSearch = await Product.findByPk(1, { include: Manufacturer });
 	// console.log(productSearch.Manufacturer.name);
 
+	// Lazy Loading / Carregamento tardio de relacionamentos
+	// const manufacturer = await Manufacturer.findByPk(1);
+	// const products = await manufacturer.getProducts();
+	// console.log(products);
+
+	// Eager Loading / Carregamento antecipado de relacionamentos
+	const manufacturer = await Manufacturer.findByPk(1, { include: Product });
+	console.log(manufacturer.Products);
+
 // UPDATE
 
 	// const productUpdate = await Product.findByPk(2);
