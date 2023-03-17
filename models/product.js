@@ -3,8 +3,9 @@
 // do banco de dados.
 const { DataTypes } = require('sequelize');
 const database = require('./db');
+const Manufacturer = require('./manufacturer');
 
-const Product = database.define('User', {
+const Product = database.define('Product', {
   // Model attributes are defined here
   id: {
     type: DataTypes.INTEGER,
@@ -19,6 +20,8 @@ const Product = database.define('User', {
   price: DataTypes.DECIMAL,
   description: DataTypes.STRING,
 });
+
+Product.belongsTo(Manufacturer, { constraints: true, foreignKey: 'manufacturerId' })
 
 module.exports = Product;
 
