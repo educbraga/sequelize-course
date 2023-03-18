@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+    run:
+        container_name: sequelize-101
+        environment:
+            - MYSQL_DATABASE=sequelize-101
+            - MYSQL_ROOT_PASSWORD=secret
+        ports:
+            - '3315:3306'
+        image: mysql:latest
