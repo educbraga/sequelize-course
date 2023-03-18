@@ -1,9 +1,9 @@
 version: '3.3'
 services:
     run:
-        container_name: sequelize-101
+        container_name: sequelize_migrations
         environment:
-            - MYSQL_DATABASE=sequelize-101
+            - MYSQL_DATABASE=sequelize_migrations
             - MYSQL_ROOT_PASSWORD=secret
         ports:
             - '3315:3306'
