@@ -17,7 +17,11 @@ const Client = database.define('client', {
         allowNull: false,
         unique: true,
       },
-      email: Sequelize.STRING
+      email: Sequelize.STRING,
+      telephone: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      }
 })
 
 module.exports = Client;
