@@ -1,5 +1,5 @@
 {
-  "name": "sequelize-seeders-faker",
+  "name": "sequelize-seeders-chancejs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
