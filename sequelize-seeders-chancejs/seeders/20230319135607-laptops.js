@@ -7,7 +7,7 @@ const laptops = [];
 
 let uniqueModels = chance.unique(chance.word, 100)
 
-for (let i = 0; i < 100; i++) {
+for (let i = 1; i < 100; i++) {
   laptops.push({
     brand: chance.word(),
     model: uniqueModels[i],
