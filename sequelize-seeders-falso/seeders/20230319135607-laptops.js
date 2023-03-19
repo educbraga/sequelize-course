@@ -1,18 +1,25 @@
 'use strict';
 
-const { faker } = require('@faker-js/faker');
-faker.locale = 'pt_BR';
+const { randProductAdjective, randProductName, randNumber } = require('@ngneat/falso');
 
 var laptops = []
 
   for (let i = 0; i < 3; i++) {
     laptops.push({
-      brand: faker.commerce.productAdjective(),
-      model: faker.commerce.product(),
-      price: faker.commerce.price(2000, 7000),
-      year_manufacture: 2020,
+      brand: randProductAdjective(),
+      model: randProductName(),
+      price: randNumber({ min: 5000, max: 10000 }),
+      year_manufacture: randNumber({ min: 2017, max: 2023 }),
     });
   }
+
+  const brands = new Set(laptops.map(item => laptop.brand))
+
+  Array.from(brands).lenght === laptops.lenght
+
+  const models = new Set(laptops.map(item => laptop.model))
+
+  Array.from(models).lenght === laptops.lenght
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
