@@ -12,7 +12,6 @@ const Laptop = database.define('Laptop', {
         brand: {
           type: Sequelize.STRING,
           allowNull: false,
-          unique: true,
         },
         model: {
           type: Sequelize.STRING,
